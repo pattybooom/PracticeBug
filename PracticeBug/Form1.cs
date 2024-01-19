@@ -428,7 +428,6 @@ namespace PracticeBug
 
             private void Reproduce(int repNum)
             {
-
                 if (foodcollected == repNum)
                 {
                     foodcollected = 0;
