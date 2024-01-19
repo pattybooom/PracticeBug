@@ -43,12 +43,7 @@ namespace PracticeBug
             frm2.DesktopLocation = new Point(20, 20);
 
             this.FormClosing += Form1_FormClosing;
-
-
-
         }
-
-
 
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
@@ -72,17 +67,6 @@ namespace PracticeBug
         {
             frm2.Close();
             frm3.f3.Close();
-        }
-
-
-
-        List<Organism> myOrganisms = new List<Organism>();
-
-        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-
-
         }
 
         private void InitSim()
@@ -171,8 +155,6 @@ namespace PracticeBug
                 else
                 {
 
-
-
                     Siticone.Desktop.UI.WinForms.SiticoneShapes midPoint = new Siticone.Desktop.UI.WinForms.SiticoneShapes();
                     midPoint.Size = new Size(10, 1000);
                     midPoint.Location = new Point(498, 0);
@@ -197,11 +179,7 @@ namespace PracticeBug
 
 
                             organismnum.num += 1;
-
-
-                            //c = Color.FromArgb(n.Next(255), n.Next(255), n.Next(255));
                             Hexabug o1 = new Hexabug(this, new Point(n.Next(500, 1000), n.Next(1000)), new Size(s, s), c, foodFind, HP, speed, repnum, false, 1);
-
                             o1.SetBounds(500, 1000, 0, 1000);
                             Controls.Add(o1.InitOrganismObj());
                             organismnum.num += 1;
@@ -307,9 +285,6 @@ namespace PracticeBug
 
         }
 
-
-
-
         public class Virus : Organism
         {
             public Virus()
@@ -355,12 +330,6 @@ namespace PracticeBug
 
             private bool alive = true;
             private bool hasVirus = false;
-
-
-
-            // Siticone.Desktop.UI.WinForms.SiticoneShapes bugObj = new Siticone.Desktop.UI.WinForms.SiticoneShapes();
-
-
 
             public Hexabug(Form form, Point location, Size size, Color colour, int foodFindLevel, int HP, int organismSpeed, int repnumb, bool hasVir, int virusRes)
             {
@@ -450,14 +419,9 @@ namespace PracticeBug
             {
                 if (organismObj != null)
                 {
-
-
-                    // for (int i = 0; i < n.Next(6); i++)
-                    // {
                     Move(p);
                     Move(p);
                     CheckIfIntesect();
-                    //}
                     Reproduce(repnum);
                 }
             }
@@ -530,13 +494,7 @@ namespace PracticeBug
                         {
                             sp = speed - rand;
                         }
-
-
-
                     }
-
-
-
 
                     int r = repnum;
                     if (n.Next(2) == 1)
