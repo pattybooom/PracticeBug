@@ -37,7 +37,7 @@ namespace PracticeBug
             speed = Speed;  
             colour = Colour;
             size = Size;
-
+            FFL = foodfind;
             Siticone.Desktop.UI.WinForms.SiticoneShapes showObj = new Siticone.Desktop.UI.WinForms.SiticoneShapes();
 
             showObj.PolygonSides = 6;
@@ -89,15 +89,12 @@ namespace PracticeBug
         
         private void B_Click(object sender, EventArgs e)
         {
-            string txt = File.ReadAllText("U:/Organisms.txt");
+           string txt = File.ReadAllText("C:/Organisms.txt");
 
-            StreamWriter writer = new StreamWriter("U:/Organisms.txt");
-            if (txt.Length > 0)
-            {
-                writer.WriteLine(txt);
-            }
+            StreamWriter writer = new StreamWriter("C:/Organisms.txt"); //need to change between school and home
             
             writer.WriteLine("{0},{1},{2},{3},{4},{5}", size.Width, colour, FFL, health, speed, repnum);
+            writer.Write(txt);
             writer.Close();
 
 
